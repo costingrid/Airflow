@@ -1,0 +1,4 @@
+slack_sdk==3.31.0
+apache-airflow-providers-hashicorp==3.7.1
+pyspark==3.5.3
+apache-airflow-providers-apache-spark==4.8.2
