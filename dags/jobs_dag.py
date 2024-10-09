@@ -8,7 +8,7 @@ from airflow.operators.empty import EmptyOperator
 config = {
     'dag_id_1': {'schedule_interval': '0 0 * * *', 'start_date': datetime(2024, 9, 1),
                  'table_name': 'table_1'},
-    'dag_id_2': {'schedule_interval': '@hourly', 'start_date': datetime(2024, 9, 2),
+    'dag_id_2': {'schedule_interval': '@daily', 'start_date': datetime(2024, 9, 2),
                  'table_name': 'table_2'},
     'dag_id_3': {'schedule_interval': '@daily', 'start_date': datetime(2024, 9, 3),
                  'table_name': 'table_3'},
