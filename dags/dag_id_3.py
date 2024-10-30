@@ -37,12 +37,14 @@ with DAG(
     )
     task_insert_row = SQLExecuteQueryOperator(
         task_id="insert_new_row",
+        conn_id="postgres-conn",
         trigger_rule=TriggerRule.NONE_FAILED,
         sql="INSERT INTO table_3 (name) VALUES ('John')",
         dag=dag
     )
     task_query = SQLExecuteQueryOperator(
         task_id="query_table",
+        conn_id="postgres-conn",
         trigger_rule=TriggerRule.NONE_FAILED,
         sql="SELECT * FROM table_3",
         dag=dag
