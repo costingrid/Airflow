@@ -30,21 +30,21 @@ with DAG(
     )
     task_create = SQLExecuteQueryOperator(
         task_id="create_table",
-        conn_id="postgres-conn",
+        conn_id="airflow_postgres_conn",
         trigger_rule=TriggerRule.NONE_FAILED,
         sql="CREATE TABLE IF NOT EXISTS table_3 (id SERIAL PRIMARY KEY, name VARCHAR(50))",
         dag=dag
     )
     task_insert_row = SQLExecuteQueryOperator(
         task_id="insert_new_row",
-        conn_id="postgres-conn",
+        conn_id="airflow_postgres_conn",
         trigger_rule=TriggerRule.NONE_FAILED,
         sql="INSERT INTO table_3 (name) VALUES ('John')",
         dag=dag
     )
     task_query = SQLExecuteQueryOperator(
         task_id="query_table",
-        conn_id="postgres-conn",
+        conn_id="airflow_postgres_conn",
         trigger_rule=TriggerRule.NONE_FAILED,
         sql="SELECT * FROM table_3",
         dag=dag
